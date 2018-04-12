@@ -1,4 +1,5 @@
 #include "Guid.h"
+#include <core/helpers/RandomHelper.h>
 
 Guid::Guid(const Guid &other)
 {

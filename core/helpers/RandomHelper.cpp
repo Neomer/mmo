@@ -1,6 +1,9 @@
 #include "RandomHelper.h"
 #include <QDateTime>
 #include <iostream>
+
+#define MAX_INT         0xFFFFFFFF
+
 using namespace std;
 
 RandomHelper &RandomHelper::Instance()
@@ -22,6 +25,16 @@ int RandomHelper::nextInt(int max)
 int RandomHelper::nextInt(int min, int max)
 {
     return min + std::rand() % (max - min);
+}
+
+double RandomHelper::nextDouble()
+{
+    return std::rand() % MAX_INT / MAX_INT;
+}
+
+bool RandomHelper::nextBool()
+{
+    return (std::rand() % 1000) >= 497;
 }
 
 RandomHelper::RandomHelper()
