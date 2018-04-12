@@ -34,7 +34,7 @@ public:
 
     bool operator !=(const Guid &other);
     bool operator ==(const Guid &other);
-    Guid &operator =(const Guid &other);
+    Guid operator =(const Guid &other);
     bool operator <(const Guid &other);
     bool operator >(const Guid &other);
 

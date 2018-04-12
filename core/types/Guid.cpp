@@ -10,7 +10,7 @@ Guid Guid::newGuid()
 {
     Guid ret;
     quint8 *ptr = (quint8 *)&(ret._data);
-    for (int i = 0; i < sizeof(GuidStructure); i++)
+    for (unsigned int i = 0; i < sizeof(GuidStructure); i++)
     {
          ptr[i] = RandomHelper::Instance().nextInt(0x100);
     }
@@ -31,27 +31,28 @@ Guid Guid::parse(QString guid, bool *ok)
 
 bool Guid::operator !=(const Guid &other)
 {
-
+    return memcmp(&(other._data), &_data, sizeof(GuidStructure)) != 0;
 }
 
 bool Guid::operator ==(const Guid &other)
 {
-
+    return memcmp(&(other._data), &_data, sizeof(GuidStructure)) == 0;
 }
 
-Guid &Guid::operator =(const Guid &other)
+Guid Guid::operator =(const Guid &other)
 {
-
+    _data = other._data;
+    return *this;
 }
 
 bool Guid::operator <(const Guid &other)
 {
-
+    return memcmp(&(other._data), &_data, sizeof(GuidStructure)) > 0;
 }
 
 bool Guid::operator >(const Guid &other)
 {
-
+    return memcmp(&(other._data), &_data, sizeof(GuidStructure)) < 0;
 }
 
 QString Guid::toString()
