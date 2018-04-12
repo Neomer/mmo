@@ -8,6 +8,10 @@ class RandomHelper
 public:
     static RandomHelper &Instance();
 
+    int nextInt();
+    int nextInt(int max);
+    int nextInt(int min, int max);
+
 private:
     RandomHelper();
     ~RandomHelper();

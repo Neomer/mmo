@@ -15,7 +15,7 @@ Guid &Guid::emptyGuid()
 
 }
 
-Guid &Guid::parse(QString guid, bool &ok)
+Guid &Guid::parse(QString guid, bool *ok)
 {
 
 }
