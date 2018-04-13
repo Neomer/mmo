@@ -19,14 +19,31 @@ SOURCES += \
     core/types/Guid.cpp \
     core/helpers/RandomHelper.cpp \
     model/AbstractItem.cpp \
-    model/AbstractEquippableItem.cpp
+    model/AbstractEquippableItem.cpp \
+    model/Resource.cpp \
+    model/Weapon.cpp \
+    model/AbstractActor.cpp \
+    model/Race.cpp \
+    model/Armor.cpp \
+    model/BaseWeapon.cpp \
+    model/Hero.cpp \
+    model/Inventory.cpp
 
 HEADERS += \
-    model/IEntity.h \
     core/types/Guid.h \
     core/helpers/RandomHelper.h \
-    model/INamedEntity.h \
     model/AbstractItem.h \
-    model/AbstractEquippableItem.h
+    model/AbstractEquippableItem.h \
+    model/Resource.h \
+    model/Weapon.h \
+    model/AbstractActor.h \
+    model/AbstractEntity.h \
+    model/Race.h \
+    model/AbstractNamedEntity.h \
+    core/defines.h \
+    model/Armor.h \
+    model/BaseWeapon.h \
+    model/Hero.h \
+    model/Inventory.h
 
 INCLUDEPATH += $$PWD

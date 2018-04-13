@@ -1,5 +1,7 @@
 #include "Guid.h"
 #include <core/helpers/RandomHelper.h>
+#include <QRegExp>
+#include <QStringList>
 
 Guid::Guid(const Guid &other)
 {
@@ -26,7 +28,27 @@ Guid Guid::emptyGuid()
 
 Guid Guid::parse(QString guid, bool *ok)
 {
-
+    QRegExp guidValidator("\\{?[\\da-fA-F]{8}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{4}\\-[\\da-fA-F]{12}\\}?");
+    if (!guidValidator.exactMatch(guid))
+    {
+        *ok = false;
+        return Guid::emptyGuid();
+    }
+    if (guid.startsWith("{")) guid = guid.mid(1);
+    if (guid.endsWith("}")) guid = guid.left(-1);
+    QStringList r = guid.split('-');
+    Guid ret;
+    ret._data.Data1 = QString(r.at(0)).toUInt(ok, 16);
+    ret._data.Data2 = QString(r.at(1)).toUInt(ok, 16);
+    ret._data.Data3 = QString(r.at(2)).toUInt(ok, 16);
+    ret._data.Data4 = QString(r.at(3)).toUInt(ok, 16) << 16;
+    ret._data.Data4 |= QString(r.at(4)).left(4).toUInt(ok, 16);
+    ret._data.Data5 = QString(r.at(4)).right(8).toUInt(ok, 16);
+    if (!*ok)
+    {
+        return Guid::emptyGuid();
+    }
+    return ret;
 }
 
 bool Guid::operator !=(const Guid &other)

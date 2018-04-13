@@ -2,9 +2,9 @@
 #define ABSTRACTITEM_H
 
 #include <QObject>
-#include "INamedEntity.h"
+#include "AbstractNamedEntity.h"
 
-class AbstractItem : public INamedEntity
+class AbstractItem : public AbstractNamedEntity
 {
     Q_PROPERTY(Guid inventoryIcon READ getInventoryIcon WRITE setInventoryIcon)
     Q_PROPERTY(Guid droppedIcon READ getDroppedIcon WRITE setDroppedIcon)
@@ -14,24 +14,13 @@ class AbstractItem : public INamedEntity
 public:
     AbstractItem();
 
-    Guid getInventoryIcon() { return _inventoryIcon; }
-    void setInventoryIcon(Guid value) { _inventoryIcon = value; }
+    PROP(Guid, InventoryIcon)
+    PROP(Guid, DroppedIcon)
+    PROP(Guid, Weight)
+    PROP(Guid, Description)
 
-    Guid getDroppedIcon() { return _droppedIcon; }
-    void setDroppedIcon(Guid value) { _droppedIcon = value; }
 
-    float getWeight() { return _weight; }
-    void setWeight(float value) { _weight = value; }
-
-    QString getDescription() { return _description; }
-    void setDescription(QString value) { _description = value; }
-
-    virtual bool getIsEquippable() = 0;
-
-private:
-    Guid _inventoryIcon, _droppedIcon;
-    float _weight;
-    QString _description;
+    virtual bool get_IsEquippable() = 0;
 };
 
 #endif // ABSTRACTITEM_H

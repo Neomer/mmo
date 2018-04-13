@@ -3,8 +3,9 @@
 
 #include <QObject>
 #include "AbstractItem.h"
+#include <QList>
 
-class EquippableItem : public AbstractItem
+class AbstractEquippableItem : public AbstractItem
 {
     Q_OBJECT
 
@@ -18,13 +19,22 @@ public:
         enSlotShoes
     };
 
-    EquippableItem();
+    AbstractEquippableItem();
 
-    virtual EquipSlot getEqipSlot() = 0;
+    PROP(bool, IsEquipped)
+
+    ///
+    /// \brief getPossibleEqipSlots возвращает список слотов, в которые можно экипировать предмет
+    /// \return
+    ///
+    virtual QList<EquipSlot> getPossibleEqipSlots() = 0;
 
     // AbstractItem interface
 public:
-    bool getIsEquippable() override { return true; }
+    bool get_IsEquippable() override { return true; }
+
+private:
+    bool _is_equipped;
 };
 
 #endif // EQIPPABLEITEM_H
