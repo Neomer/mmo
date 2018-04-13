@@ -7,7 +7,9 @@
 class AbstractItem : public INamedEntity
 {
     Q_PROPERTY(Guid inventoryIcon READ getInventoryIcon WRITE setInventoryIcon)
+    Q_PROPERTY(Guid droppedIcon READ getDroppedIcon WRITE setDroppedIcon)
     Q_PROPERTY(Guid weight READ getWeight WRITE setWeight)
+    Q_PROPERTY(Guid description READ getDescription WRITE setDescription)
 
 public:
     AbstractItem();

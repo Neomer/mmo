@@ -18,13 +18,15 @@ SOURCES += \
         main.cpp \
     core/types/Guid.cpp \
     core/helpers/RandomHelper.cpp \
-    model/AbstractItem.cpp
+    model/AbstractItem.cpp \
+    model/AbstractEquippableItem.cpp
 
 HEADERS += \
     model/IEntity.h \
     core/types/Guid.h \
     core/helpers/RandomHelper.h \
     model/INamedEntity.h \
-    model/AbstractItem.h
+    model/AbstractItem.h \
+    model/AbstractEquippableItem.h
 
 INCLUDEPATH += $$PWD
