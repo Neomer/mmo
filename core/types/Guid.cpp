@@ -68,5 +68,5 @@ QString Guid::toString()
 
 Guid::Guid()
 {
-
+    memset(&_data, 0, sizeof(GuidStructure));
 }

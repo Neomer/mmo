@@ -9,6 +9,7 @@
 class Guid
 {
 public:
+    Guid();
     ///
     /// \brief Guid создает копию Guid
     /// \param other
@@ -40,9 +41,6 @@ public:
 
     QString toString();
 
-
-private:
-    Guid();
 
 private:
     struct GuidStructure

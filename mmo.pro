@@ -17,11 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     core/types/Guid.cpp \
-    core/helpers/RandomHelper.cpp
+    core/helpers/RandomHelper.cpp \
+    model/AbstractItem.cpp
 
 HEADERS += \
     model/IEntity.h \
     core/types/Guid.h \
-    core/helpers/RandomHelper.h
+    core/helpers/RandomHelper.h \
+    model/INamedEntity.h \
+    model/AbstractItem.h
 
 INCLUDEPATH += $$PWD
