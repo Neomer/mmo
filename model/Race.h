@@ -3,9 +3,14 @@
 
 #include <QObject>
 #include "AbstractNamedEntity.h"
+#include "AbstractDatabaseStored.h"
 
-class Race : public AbstractNamedEntity
+class Race :
+        public AbstractNamedEntity,
+        public AbstractDatabaseStored
 {
+    Q_OBJECT
+
 public:
     Race();
 

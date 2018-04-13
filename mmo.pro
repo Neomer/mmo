@@ -27,7 +27,14 @@ SOURCES += \
     model/Armor.cpp \
     model/BaseWeapon.cpp \
     model/Hero.cpp \
-    model/Inventory.cpp
+    model/Inventory.cpp \
+    model/managers/AbstractManager.cpp \
+    core/helpers/DatabaseHelper.cpp \
+    core/database/DatabaseSession.cpp \
+    core/database/AbstractDatabaseQuery.cpp \
+    core/database/AbstractDatabaseConnection.cpp \
+    core/database/postgresql/PostgresDatabaseQuery.cpp \
+    model/managers/RaceManager.cpp
 
 HEADERS += \
     core/types/Guid.h \
@@ -44,6 +51,14 @@ HEADERS += \
     model/Armor.h \
     model/BaseWeapon.h \
     model/Hero.h \
-    model/Inventory.h
+    model/Inventory.h \
+    model/managers/AbstractManager.h \
+    model/AbstractDatabaseStored.h \
+    core/helpers/DatabaseHelper.h \
+    core/database/DatabaseSession.h \
+    core/database/AbstractDatabaseQuery.h \
+    core/database/AbstractDatabaseConnection.h \
+    core/database/postgresql/PostgresDatabaseQuery.h \
+    model/managers/RaceManager.h
 
 INCLUDEPATH += $$PWD
