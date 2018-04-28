@@ -14,6 +14,9 @@ public:
     int rowCount() override;
     bool next() override;
     bool first() override;
+
+    template<typename T> T value(int index);
+    template<typename T> T value(QString name);
 };
 
 #endif // POSTGRESDATABASEQUERY_H

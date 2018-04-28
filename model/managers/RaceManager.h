@@ -4,7 +4,8 @@
 #include "AbstractManager.h"
 #include <model/Race.h>
 
-class RaceManager : public AbstractManager<Race>
+class RaceManager :
+        public AbstractManager<Race>
 {
 public:
     RaceManager();

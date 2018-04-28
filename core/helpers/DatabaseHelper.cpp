@@ -18,5 +18,6 @@ DatabaseHelper &DatabaseHelper::Instance()
 
 DatabaseSession &DatabaseHelper::getCurrentSession()
 {
-
+    auto session = DatabaseSession();
+    return session;
 }

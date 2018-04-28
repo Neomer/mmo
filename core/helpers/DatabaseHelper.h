@@ -1,7 +1,7 @@
 #ifndef DATABASEHELPER_H
 #define DATABASEHELPER_H
 
-#include <core/database/DatabaseSession.h>.h>
+#include <core/database/DatabaseSession.h>
 
 class DatabaseHelper
 {

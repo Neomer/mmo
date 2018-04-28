@@ -16,6 +16,11 @@ public:
 
     PROP(QString, Description)
     PROP(Guid, Icon)
+
+// AbstractDatabaseStored interface
+public:
+    QString getTableName() final { return "Races"; }
+    void fromDatabaseQuery(std::shared_ptr<AbstractDatabaseQuery> query) override;
 };
 
 #endif // RACE_H

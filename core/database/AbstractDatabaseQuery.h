@@ -17,10 +17,8 @@ public:
     virtual bool next() = 0;
     virtual bool first() = 0;
 
-    template<typename T>
-    T value(int index) { }
-    template<typename T>
-    T value(QString name) { }
+    template<typename T> T value(int index) { }
+    template<typename T> T value(QString name) { }
 
 };
 

@@ -11,9 +11,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    Hero player1;
-
     RaceManager mgr;
+    auto race = mgr.getById(Guid::newGuid());
 
     return a.exec();
 }
